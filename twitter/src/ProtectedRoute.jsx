@@ -10,12 +10,11 @@ const ProtectedRoute = ({children}) => {
     if(loading){
         return <PageLoading/>
     }
-    if(user){
-        return children 
-    }
+  
     if(!user){
         return <Navigate to={'/login'}/>
     }
+    return children
 }
 
 export default ProtectedRoute
